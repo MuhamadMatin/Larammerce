@@ -1,5 +1,5 @@
 <div id="search-box" class="my-3">
-    <div class="flex items-center w-full px-3 py-2 mb-3 bg-gray-100 rounded-2xl">
+    <div class="flex items-center px-3 py-2 mb-3 bg-gray-100 w-fit rounded-2xl">
         <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-6 h-6 text-gray-500">
                 <path stroke-linecap="round" stroke-linejoin="round"

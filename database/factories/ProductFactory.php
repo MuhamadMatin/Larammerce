@@ -25,7 +25,7 @@ class ProductFactory extends Factory
         return [
             'name' => $name,
             'slug' => $slug,
-            'desk' => $this->faker->paragraph(100),
+            'desk' => $this->faker->paragraph(40),
             'thumnail' => $this->faker->imageUrl(),
             'price' => $this->faker->numberBetween(1000, 1000000),
             'category_id' => Category::pluck('id')->random(),

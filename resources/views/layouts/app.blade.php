@@ -20,7 +20,7 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100">
+    <div class="min-h-screen">
         <livewire:partials.navigation />
 
         <!-- Page Heading -->
@@ -33,9 +33,10 @@
         @endif
 
         <!-- Page Content -->
-        <main>
+        <main class="max-w-screen-xl mx-auto bg-white">
             {{ $slot }}
         </main>
+        <livewire:partials.footer />
     </div>
 </body>
 

@@ -6,6 +6,8 @@ use App\Http\Controllers\IndexController;
 // Route::view('/', 'welcome');
 Route::get('/', [IndexController::class, 'index'])
     ->name('index');
+Route::get('/{shop:slug}', [IndexController::class, 'shop'])
+    ->name('shop');
 Route::get('/{shop:slug}/{product:slug}', [IndexController::class, 'show'])
     ->name('show');
 Route::view('/about', 'about')

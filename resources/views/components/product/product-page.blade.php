@@ -1,6 +1,7 @@
 @foreach ($products as $product)
-    <div class="flex-none w-full md:w-64">
-        <img src="{{ $product->thumnail }}" alt="{{ $product->name }}" class="object-cover w-full h-48 rounded-t-md">
+    <div class="flex-none w-full mx-auto md:w-64">
+        <img src="{{ $product->thumnail }}" alt="{{ $product->name }}" class="object-cover w-full h-48 rounded-t-md"
+            loading="lazy">
         <div class="p-4 bg-white rounded-b-lg shadow-md">
             <a wire:navigate href="{{ route('show', ['shop' => $product->shop->slug, 'product' => $product->slug]) }}"
                 class="font-semibold text-gray-800">{{ Str::limit($product->name, 20) }}</a>

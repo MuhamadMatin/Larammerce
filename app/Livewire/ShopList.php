@@ -9,21 +9,14 @@ use Livewire\Attributes\Url;
 use Livewire\WithPagination;
 use Livewire\Attributes\Computed;
 
-class ProductList extends Component
+class ShopList extends Component
 {
     use WithPagination;
 
     #[Url()]
     public $search = '';
-    // #[Url()]
+    #[Url()]
     public $category = '';
-    public $shop_id = null;
-
-    public function mount($shopId = null)
-    {
-        $this->shop_id = $shopId;
-        // $this->resetPage();
-    }
 
     #[On('search')]
     public function updateSearch($search)
@@ -36,13 +29,13 @@ class ProductList extends Component
     public function updateCategory($category)
     {
         $this->category = $category;
-        // $this->resetPage();
+        $this->resetPage();
     }
 
     public function resetAll()
     {
         $this->reset('search');
-        $this->reset('category');
+        // $this->reset('category');
         $this->resetPage();
         $this->dispatch('resetAll');
     }
@@ -50,11 +43,8 @@ class ProductList extends Component
     #[Computed()]
     public function products()
     {
-        return Product::with('riview', 'shop')
+        return Product::with('category')
             ->where('name', 'like', '%' . $this->search . '%')
-            ->when($this->shop_id, function ($query) {
-                return $query->where('shop_id', $this->shop_id);
-            })
             ->when($this->category, function ($query) {
                 return $query->where('category_id', $this->category);
             })
@@ -63,6 +53,6 @@ class ProductList extends Component
 
     public function render()
     {
-        return view('livewire.product-list');
+        return view('livewire.shop-list');
     }
 }

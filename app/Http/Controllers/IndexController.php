@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Shop;
 use App\Models\Thumbnail;
 use Illuminate\Http\Request;
 
@@ -21,11 +22,19 @@ class IndexController extends Controller
         ]);
     }
 
-    public function show($shop, Product $product)
+    public function show(Shop $shop, Product $product)
     {
         $product->load('shop', 'riview', 'images');
         return view('show', [
             'product' => $product
+        ]);
+    }
+
+    public function shop(Shop $shop)
+    {
+        $shop->load('products');
+        return view('shop', [
+            'shop' => $shop,
         ]);
     }
 

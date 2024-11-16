@@ -8,6 +8,11 @@
                         class="object-cover w-full h-48 rounded-lg shadow-lg md:h-96">
                 </div>
                 <div class="flex space-x-2 overflow-x-auto no-scrollbar">
+                    <img src="{{ $product->thumnail }}" alt="{{ $product->name }}"
+                        class="object-cover w-20 h-20 border border-gray-300 rounded cursor-pointer hover:border-blue-500"
+                        onclick="
+                        document.getElementById('mainImage').src = '{{ $product->thumnail }}'
+                        ">
                     @foreach ($product->images as $image)
                         <img src="{{ $image->image }}" alt="{{ $product->name }}"
                             class="object-cover w-20 h-20 border border-gray-300 rounded cursor-pointer hover:border-blue-500"
@@ -45,7 +50,9 @@
                                     stroke="#000" stroke-width="1.5" stroke-linecap="round"></path>
                             </g>
                         </svg>
-                        <p class="text-lg font-semibold text-gray-700">{{ $product->shop->name }}</p>
+                        <a wire:navigate href="{{ route('shop', $product->shop->slug) }}">
+                            <p class="text-lg font-semibold text-gray-700">{{ $product->shop->name }}</p>
+                        </a>
                     </span>
                     <div class="flex items-center mt-4 gap-x-2">
                         <p class="text-xl font-bold text-gray-900">Rp
@@ -57,7 +64,7 @@
                                 <path
                                     d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                             </svg>
-                            <p class="ml-1 text-gray-600">{{ $product->avgRating }}</p>
+                            <p class="ml-1 text-gray-600">{{ $product->calcStar() }}</p>
                         </span>
                     </div>
                 </div>

@@ -24,7 +24,7 @@ class ShopFactory extends Factory
         return [
             'name' => $name,
             'slug' => $slug,
-            'desk' => $this->faker->paragraph(100),
+            'desk' => $this->faker->paragraph(20),
             'image' => $this->faker->imageUrl(),
             'city' => $this->faker->city(),
             'user_id' => User::pluck('id')->random(),
