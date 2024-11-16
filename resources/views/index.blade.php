@@ -33,20 +33,23 @@
     </div>
 
     <div class="my-20 md:mx-10">
-        <span class="flex items-center mb-4 gap-x-6">
+        <div class="flex items-center mb-4 gap-x-6">
             <h3 class="text-3xl font-semibold text-gray-800">News Products</h3>
-            <div class="flex items-center gap-1 w-fit">
-                <p>See more</p>
-                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="#000000" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round"></path>
-                    </g>
-                </svg>
-            </div>
-        </span>
+            <a wire:navigate href="{{ route('shopping') }}">
+                <span class="flex items-center gap-1 cursor-pointer w-fit group">
+                    <p>See more</p>
+                    <svg class="w-5 h-5 duration-150 group-hover:-translate-x-1 stroke-black group-hover:fill-orangeDark group-hover:stroke-orangeDark"
+                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                    </svg>
+                </span>
+            </a>
+        </div>
         <div class="flex overflow-x-auto no-scrollbar gap-x-6">
             @include('components.product.product-page', ['products' => $products])
         </div>
@@ -55,17 +58,20 @@
     <div class="my-20 md:mx-10">
         <div class="flex items-center mb-4 gap-x-4">
             <h3 class="text-3xl font-semibold text-gray-800">Under 50k</h3>
-            <span class="flex items-center gap-1 w-fit">
-                <p>See more</p>
-                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="#000000" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round"></path>
-                    </g>
-                </svg>
-            </span>
+            <a wire:navigate href="{{ route('shopping') }}">
+                <span class="flex items-center gap-1 cursor-pointer w-fit group">
+                    <p>See more</p>
+                    <svg class="w-5 h-5 duration-150 group-hover:-translate-x-1 stroke-black group-hover:fill-orangeDark group-hover:stroke-orangeDark"
+                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                    </svg>
+                </span>
+            </a>
         </div>
         <div class="flex overflow-x-auto no-scrollbar gap-x-6">
             @include('components.product.product-page', ['products' => $unders])

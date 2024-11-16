@@ -20,7 +20,7 @@ class RiviewProductFactory extends Factory
     {
         return [
             'star' => $this->faker->numberBetween(1, 5),
-            'body' => $this->faker->paragraph(50),
+            'body' => $this->faker->paragraph(4),
             'user_id' => User::pluck('id')->random(),
             'product_id' => Product::pluck('id')->random(),
         ];
