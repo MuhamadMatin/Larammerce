@@ -26,11 +26,11 @@ class DatabaseSeeder extends Seeder
         Manage::factory(1)->create();
         Thumbnail::factory(5)->create();
         Category::factory(10)->create();
-        Shop::factory(10)->create();
-        Product::factory(500)->create();
-        RiviewProduct::factory(1500)->create();
+        Shop::factory(50)->create();
+        Product::factory(1500)->create();
+        RiviewProduct::factory(2000)->create();
         SavedProductUser::factory(3000)->create();
-        ImageProduct::factory(1500)->create();
+        ImageProduct::factory(2000)->create();
 
         User::factory()->create([
             'name' => 'admin',

@@ -46,13 +46,15 @@ class IndexController extends Controller
     public function shopping()
     {
         $products = $this->baseQuery();
+        $shops = Shop::all();
         return view('shopping', [
-            'products' => $products
+            'products' => $products,
+            'shops' => $shops,
         ]);
     }
 
-    public function about()
+    public function cart()
     {
-        return view('about');
+        return view('cart');
     }
 }

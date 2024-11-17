@@ -13,8 +13,6 @@ Route::get('/shopping', [IndexController::class, 'shopping'])
     ->name('shopping');
 Route::view('/blog', 'blog')
     ->name('blog');
-Route::view('/about', 'about')
-    ->name('about');
 
 Route::middleware(['auth'])->group(function () {
     Route::prefix('manage')->group(function () {
@@ -29,8 +27,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/users', [AdminController::class, 'users'])
             ->name('manage.user');
     });
-    Route::view('profile', 'profile')
+    Route::view('/profile', 'profile')
         ->name('profile');
+    Route::get('/cart', [IndexController::class, 'cart'])
+        ->name('cart');
 });
 
 Route::view('dashboard', 'dashboard')

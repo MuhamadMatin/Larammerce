@@ -13,12 +13,12 @@
             <!-- Quick Links Section -->
             <div>
                 <h3 class="mb-4 text-xl font-semibold">Quick Links</h3>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:text-orangeDark">Home</a></li>
-                    <li><a href="#" class="hover:text-orangeDark">Shop</a></li>
-                    <li><a href="#" class="hover:text-orangeDark">Blog</a></li>
-                    <li><a href="#" class="hover:text-orangeDark">Contact</a></li>
-                </ul>
+                <span class="flex flex-col space-y-2 text-sm">
+                    <a wire:navigate href="{{ route('index') }}" class="hover:text-orangeDark">Home</a>
+                    <a wire:navigate href="{{ route('shopping') }}" class="hover:text-orangeDark">Shopping</a>
+                    <a wire:navigate href="{{ route('blog') }}" class="hover:text-orangeDark">Blog</a>
+                    {{-- <a wire:navigate href="{{ route('index') }}" class="hover:text-orangeDark">Contact</a> --}}
+                </span>
             </div>
 
             <!-- Contact Section -->
@@ -35,7 +35,7 @@
         </div>
 
         <div class="mt-8 text-sm text-center">
-            <p>&copy; 2024 Your Company. All rights reserved.</p>
+            <p>&copy; {{ \Carbon\Carbon::now()->year }} Larammerce. All rights reserved.</p>
         </div>
     </div>
 </footer>

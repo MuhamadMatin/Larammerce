@@ -4,7 +4,8 @@
             loading="lazy">
         <div class="p-4 bg-white rounded-b-lg shadow-md">
             <a wire:navigate href="{{ route('show', ['shop' => $product->shop->slug, 'product' => $product->slug]) }}"
-                class="font-semibold text-gray-800">{{ Str::limit($product->name, 20) }}</a>
+                class="font-semibold text-gray-800">{{ Str::limit($product->name, 20) }}
+            </a>
             <div class="flex items-center justify-between mt-2">
                 <p class="text-sm font-semibold text-gray-900">Rp
                     {{ number_format($product->price, 0, ',', '.') }}</p>

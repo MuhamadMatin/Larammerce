@@ -3,23 +3,25 @@
 namespace App\Livewire;
 
 use App\Models\Product;
-use App\Models\Shop;
 use Livewire\Component;
 use Livewire\Attributes\On;
 use Livewire\Attributes\Url;
 use Livewire\WithPagination;
 use Livewire\Attributes\Computed;
 
-class ShopList extends Component
+class ShopperList extends Component
 {
     use WithPagination;
 
     #[Url()]
     public $search = '';
+    public $category = '';
+    public $shop_id = '';
     public $pagination = true;
 
-    public function mount($pagination = true)
+    public function mount($shopId = null, $pagination = true)
     {
+        $this->shop_id = $shopId;
         $this->pagination = $pagination;
         // $this->resetPage();
     }
@@ -28,6 +30,13 @@ class ShopList extends Component
     public function updateSearch($search)
     {
         $this->search = $search;
+        $this->resetPage();
+    }
+
+    #[On('category')]
+    public function updateCategory($category)
+    {
+        $this->category = $category;
         $this->resetPage();
     }
 
@@ -40,17 +49,22 @@ class ShopList extends Component
     }
 
     #[Computed()]
-    public function shops()
+    public function products()
     {
-        $query = Shop::when($this->search, function ($query) {
-            return $query->where('name', 'like', '%' . $this->search . '%');
-        });;
+        $query = Product::with('riview', 'shop')
+            ->where('name', 'like', '%' . $this->search . '%')
+            ->when($this->shop_id, function ($query) {
+                return $query->where('shop_id', $this->shop_id);
+            })
+            ->when($this->category, function ($query) {
+                return $query->where('category_id', $this->category);
+            });
 
         return $this->pagination ? $query->paginate(20) : $query->limit(20)->get();
     }
 
     public function render()
     {
-        return view('livewire.shop-list');
+        return view('livewire.shopper-list');
     }
 }

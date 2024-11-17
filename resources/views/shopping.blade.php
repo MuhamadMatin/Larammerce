@@ -7,5 +7,6 @@
         <livewire:search />
         <livewire:category-list />
         <livewire:product-list :products="$products" :pagination="true" />
+        <livewire:shop-list :shops="$shops" :pagination="true" />
     </div>
 </x-app-layout>

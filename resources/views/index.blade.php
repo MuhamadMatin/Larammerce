@@ -36,9 +36,9 @@
         <div class="flex items-center mb-4 gap-x-6">
             <h3 class="text-3xl font-semibold text-gray-800">News Products</h3>
             <a wire:navigate href="{{ route('shopping') }}">
-                <span class="flex items-center gap-1 cursor-pointer w-fit group">
+                <span class="flex items-center cursor-pointer w-fit group">
                     <p>See more</p>
-                    <svg class="w-5 h-5 duration-150 group-hover:-translate-x-1 stroke-black group-hover:fill-orangeDark group-hover:stroke-orangeDark"
+                    <svg class="w-5 h-5 duration-150 group-hover:translate-x-1 stroke-black group-hover:fill-orangeDark group-hover:stroke-orangeDark"
                         viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -59,9 +59,9 @@
         <div class="flex items-center mb-4 gap-x-4">
             <h3 class="text-3xl font-semibold text-gray-800">Under 50k</h3>
             <a wire:navigate href="{{ route('shopping') }}">
-                <span class="flex items-center gap-1 cursor-pointer w-fit group">
+                <span class="flex items-center cursor-pointer w-fit group">
                     <p>See more</p>
-                    <svg class="w-5 h-5 duration-150 group-hover:-translate-x-1 stroke-black group-hover:fill-orangeDark group-hover:stroke-orangeDark"
+                    <svg class="w-5 h-5 duration-150 group-hover:translate-x-1 stroke-black group-hover:fill-orangeDark group-hover:stroke-orangeDark"
                         viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
