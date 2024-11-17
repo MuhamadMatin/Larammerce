@@ -40,7 +40,7 @@
             @empty($shop->products)
                 <p class="text-gray-600">No products available in this shop.</p>
             @else
-                <livewire:product-list :shop_id="$shop->id" />
+                <livewire:product-list :shop_id="$shop->id" :pagination='true' />
             @endempty
         </div>
     </div>

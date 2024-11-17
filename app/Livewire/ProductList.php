@@ -15,13 +15,14 @@ class ProductList extends Component
 
     #[Url()]
     public $search = '';
-    // #[Url()]
     public $category = '';
     public $shop_id = null;
+    public $pagination = true;
 
-    public function mount($shopId = null)
+    public function mount($shopId = null, $pagination = true)
     {
         $this->shop_id = $shopId;
+        $this->pagination = $pagination;
         // $this->resetPage();
     }
 
@@ -50,15 +51,16 @@ class ProductList extends Component
     #[Computed()]
     public function products()
     {
-        return Product::with('riview', 'shop')
+        $query = Product::with('riview', 'shop')
             ->where('name', 'like', '%' . $this->search . '%')
             ->when($this->shop_id, function ($query) {
                 return $query->where('shop_id', $this->shop_id);
             })
             ->when($this->category, function ($query) {
                 return $query->where('category_id', $this->category);
-            })
-            ->paginate(20);
+            });
+
+        return $this->pagination ? $query->paginate(20) : $query->limit(20)->get();
     }
 
     public function render()

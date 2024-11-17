@@ -22,31 +22,28 @@ new class extends Component {
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex items-center shrink-0">
-                    <a href="{{ route('dashboard') }}" wire:navigate>
+                    <a href="{{ route('dashboard') }}">
                         <x-application-logo class="block w-auto text-gray-800 fill-current h-9" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="flex items-center space-x-2 sm:-my-px sm:ms-5">
-                    <x-nav-link :href="route('index')" :active="request()->routeIs('index')" wire:navigate>
+                <div class="items-center hidden space-x-2 md:flex sm:-my-px sm:ms-5">
+                    <x-nav-link :href="route('index')" :active="request()->routeIs('index')">
                         {{ __('Home') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('shopping')" :active="request()->routeIs('shopping')" wire:navigate>
-                        {{ __('Shop') }}
+                    <x-nav-link :href="route('shopping')" :active="request()->routeIs('shopping')">
+                        {{ __('Shopping') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('blog')" :active="request()->routeIs('blog')" wire:navigate>
+                    <x-nav-link :href="route('blog')" :active="request()->routeIs('blog')">
                         {{ __('Blog') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('about')" :active="request()->routeIs('about')" wire:navigate>
-                        {{ __('About') }}
                     </x-nav-link>
                 </div>
             </div>
 
             @auth
                 <!-- Settings Dropdown -->
-                <div class="hidden sm:flex sm:items-center sm:ms-6">
+                <div class="flex items-center ms-6">
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
                             <button
@@ -66,9 +63,23 @@ new class extends Component {
                         </x-slot>
 
                         <x-slot name="content">
-                            <x-dropdown-link :href="route('profile')" wire:navigate>
+                            <x-dropdown-link :href="route('profile')" :active="request()->routeIs('profile')">
                                 {{ __('Profile') }}
                             </x-dropdown-link>
+                            <x-dropdown-link :href="route('manage.index')" :active="request()->routeIs('manage.index')">
+                                {{ __('Manage') }}
+                            </x-dropdown-link>
+                            <span class="md:hidden">
+                                <x-dropdown-link :href="route('index')" :active="request()->routeIs('index')">
+                                    {{ __('Home') }}
+                                </x-dropdown-link>
+                                <x-dropdown-link :href="route('shopping')" :active="request()->routeIs('shopping')">
+                                    {{ __('Shopping') }}
+                                </x-dropdown-link>
+                                <x-dropdown-link :href="route('blog')" :active="request()->routeIs('blog')">
+                                    {{ __('Blog') }}
+                                </x-dropdown-link>
+                            </span>
 
                             <!-- Authentication -->
                             <button wire:click="logout" class="w-full text-start">
@@ -81,10 +92,10 @@ new class extends Component {
                 </div>
             @else
                 <div class="flex items-center space-x-1">
-                    <x-nav-link :href="route('login')" :active="request()->routeIs('login')" wire:navigate>
+                    <x-nav-link :href="route('login')" :active="request()->routeIs('login')">
                         {{ __('Login') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('register')" :active="request()->routeIs('register')" wire:navigate>
+                    <x-nav-link :href="route('register')" :active="request()->routeIs('register')">
                         {{ __('Register') }}
                     </x-nav-link>
                 </div>

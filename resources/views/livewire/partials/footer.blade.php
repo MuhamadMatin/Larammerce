@@ -1,4 +1,4 @@
-<footer class="py-8 text-white bg-blueDark">
+<footer class="py-8 text-white bg-blueDarker">
     <div class="max-w-screen-xl px-4 mx-auto">
         <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
             <!-- About Section -->

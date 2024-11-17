@@ -21,8 +21,7 @@
 
 <body class="font-sans antialiased">
     <div class="min-h-screen">
-        <livewire:partials.navigation />
-        {{-- @include('layouts.partials.header') --}}
+        <livewire:partials.navbar />
 
         <!-- Page Heading -->
         @if (isset($header))

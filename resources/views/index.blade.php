@@ -32,7 +32,7 @@
         </div>
     </div>
 
-    <div class="my-20 md:mx-10">
+    <div class="mx-8 my-20">
         <div class="flex items-center mb-4 gap-x-6">
             <h3 class="text-3xl font-semibold text-gray-800">News Products</h3>
             <a wire:navigate href="{{ route('shopping') }}">
@@ -55,7 +55,7 @@
         </div>
     </div>
 
-    <div class="my-20 md:mx-10">
+    <div class="mx-8 my-20">
         <div class="flex items-center mb-4 gap-x-4">
             <h3 class="text-3xl font-semibold text-gray-800">Under 50k</h3>
             <a wire:navigate href="{{ route('shopping') }}">
@@ -78,8 +78,9 @@
         </div>
     </div>
 
-    <div class="my-20 md:mx-10">
+    <div class="mx-8 my-20">
+        <p class="text-gray-800 font-semibold mb-1.5">Click category and see the magic 🪄</p>
         <livewire:category-list />
-        <livewire:product-list :products="$products" />
+        <livewire:product-list :products="$products" :pagination="false" />
     </div>
 </x-app-layout>

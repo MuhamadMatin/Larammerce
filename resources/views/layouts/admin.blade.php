@@ -19,25 +19,19 @@
     @livewireStyles
 </head>
 
-<body class="font-sans antialiased">
-    <div class="min-h-screen">
-        <livewire:partials.navbar />
+<body class="font-sans antialiased bg-gray-100">
+    <div class="flex min-h-screen">
+        <livewire:partials.nav-admin />
 
-        <!-- Page Heading -->
-        @if (isset($header))
-            <header class="bg-white shadow">
-                <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
-        @endif
-
-        <!-- Page Content -->
-        <main class="max-w-screen-xl mx-auto bg-white">
-            {{ $slot }}
-        </main>
-        <livewire:partials.footer />
+        <!-- Main Content -->
+        <div class="flex-1">
+            <main class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                {{ $slot }}
+            </main>
+        </div>
     </div>
+
+    @livewireScripts
 </body>
 
 </html>
