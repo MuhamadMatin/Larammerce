@@ -13,7 +13,7 @@ class RiviewProductPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return $user->can('view_any_riview');
     }
 
     /**
@@ -21,7 +21,7 @@ class RiviewProductPolicy
      */
     public function view(User $user, RiviewProduct $riviewProduct): bool
     {
-        //
+        return $user->can('view_riview');
     }
 
     /**
@@ -29,7 +29,7 @@ class RiviewProductPolicy
      */
     public function create(User $user): bool
     {
-        //
+        return $user->can('create_riview');
     }
 
     /**
@@ -37,7 +37,7 @@ class RiviewProductPolicy
      */
     public function update(User $user, RiviewProduct $riviewProduct): bool
     {
-        //
+        return $user->can('update_riview');
     }
 
     /**
@@ -45,7 +45,7 @@ class RiviewProductPolicy
      */
     public function delete(User $user, RiviewProduct $riviewProduct): bool
     {
-        //
+        return $user->can('delete_riview');
     }
 
     /**
@@ -53,7 +53,7 @@ class RiviewProductPolicy
      */
     public function restore(User $user, RiviewProduct $riviewProduct): bool
     {
-        //
+        return $user->can('restore_riview');
     }
 
     /**
@@ -61,6 +61,6 @@ class RiviewProductPolicy
      */
     public function forceDelete(User $user, RiviewProduct $riviewProduct): bool
     {
-        //
+        return $user->can('force_delete_riview');
     }
 }

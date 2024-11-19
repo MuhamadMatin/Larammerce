@@ -13,7 +13,7 @@ class SavedProductUserPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return $user->can('view_any_saved_product');
     }
 
     /**
@@ -21,7 +21,7 @@ class SavedProductUserPolicy
      */
     public function view(User $user, SavedProductUser $savedProductUser): bool
     {
-        //
+        return $user->can('view_saved_product');
     }
 
     /**
@@ -29,7 +29,7 @@ class SavedProductUserPolicy
      */
     public function create(User $user): bool
     {
-        //
+        return $user->can('create_saved_product');
     }
 
     /**
@@ -37,7 +37,7 @@ class SavedProductUserPolicy
      */
     public function update(User $user, SavedProductUser $savedProductUser): bool
     {
-        //
+        return $user->can('update_saved_product');
     }
 
     /**
@@ -45,7 +45,7 @@ class SavedProductUserPolicy
      */
     public function delete(User $user, SavedProductUser $savedProductUser): bool
     {
-        //
+        return $user->can('delete_saved_product');
     }
 
     /**
@@ -53,7 +53,7 @@ class SavedProductUserPolicy
      */
     public function restore(User $user, SavedProductUser $savedProductUser): bool
     {
-        //
+        return $user->can('restore_saved_product');
     }
 
     /**
@@ -61,6 +61,6 @@ class SavedProductUserPolicy
      */
     public function forceDelete(User $user, SavedProductUser $savedProductUser): bool
     {
-        //
+        return $user->can('force_delete_saved_product');
     }
 }

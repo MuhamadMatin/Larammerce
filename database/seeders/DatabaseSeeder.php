@@ -2,17 +2,18 @@
 
 namespace Database\Seeders;
 
-use App\Models\Category;
-use App\Models\ImageProduct;
+use App\Models\Shop;
+use App\Models\User;
 use App\Models\Manage;
 use App\Models\Product;
-use App\Models\RiviewProduct;
-use App\Models\SavedProductUser;
-use App\Models\Shop;
+use App\Models\Category;
 use App\Models\Thumbnail;
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\ImageProduct;
+use App\Models\RiviewProduct;
 use Illuminate\Database\Seeder;
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\SavedProductUser;
+use Database\Seeders\RoleSeeder;
 use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
@@ -22,11 +23,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->create([
-            'name' => 'admin',
-            'email' => 'admin@gmail.com',
-            'password' => Hash::make('admin'),
-        ]);
+        $this->call(RoleSeeder::class);
 
         User::factory(150)->create();
         Manage::factory(1)->create();

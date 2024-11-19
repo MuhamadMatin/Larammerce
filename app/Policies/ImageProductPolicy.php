@@ -13,7 +13,7 @@ class ImageProductPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return $user->can('view_any_image_product');
     }
 
     /**
@@ -21,7 +21,7 @@ class ImageProductPolicy
      */
     public function view(User $user, ImageProduct $imageProduct): bool
     {
-        //
+        return $user->can('view_image_product');
     }
 
     /**
@@ -29,7 +29,7 @@ class ImageProductPolicy
      */
     public function create(User $user): bool
     {
-        //
+        return $user->can('create_image_product');
     }
 
     /**
@@ -37,7 +37,7 @@ class ImageProductPolicy
      */
     public function update(User $user, ImageProduct $imageProduct): bool
     {
-        //
+        return $user->can('update_image_product');
     }
 
     /**
@@ -45,7 +45,7 @@ class ImageProductPolicy
      */
     public function delete(User $user, ImageProduct $imageProduct): bool
     {
-        //
+        return $user->can('delete_image_product');
     }
 
     /**
@@ -53,7 +53,7 @@ class ImageProductPolicy
      */
     public function restore(User $user, ImageProduct $imageProduct): bool
     {
-        //
+        return $user->can('restore_image_product');
     }
 
     /**
@@ -61,6 +61,6 @@ class ImageProductPolicy
      */
     public function forceDelete(User $user, ImageProduct $imageProduct): bool
     {
-        //
+        return $user->can('force_delete_image_product');
     }
 }

@@ -3,16 +3,15 @@
 namespace App\Policies;
 
 use App\Models\User;
-use Illuminate\Auth\Access\Response;
 
-class UserPolicy
+class RolePolicy
 {
     /**
      * Determine whether the user can view any models.
      */
     public function viewAny(User $user): bool
     {
-        return $user->can('view_any_user');
+        return $user->can('view_any_role');
     }
 
     /**
@@ -20,7 +19,7 @@ class UserPolicy
      */
     public function view(User $user, User $model): bool
     {
-        return $user->can('view_user');
+        return $user->can('view_role');
     }
 
     /**
@@ -28,7 +27,7 @@ class UserPolicy
      */
     public function create(User $user): bool
     {
-        return $user->can('create_user');
+        return $user->can('create_role');
     }
 
     /**
@@ -36,7 +35,7 @@ class UserPolicy
      */
     public function update(User $user, User $model): bool
     {
-        return $user->can('update_user');
+        return $user->can('update_role');
     }
 
     /**
@@ -44,7 +43,7 @@ class UserPolicy
      */
     public function delete(User $user, User $model): bool
     {
-        return $user->can('delete_user');
+        return $user->can('delete_role');
     }
 
     /**
@@ -52,7 +51,7 @@ class UserPolicy
      */
     public function restore(User $user, User $model): bool
     {
-        return $user->can('restore_user');
+        return $user->can('restore_role');
     }
 
     /**
@@ -60,6 +59,6 @@ class UserPolicy
      */
     public function forceDelete(User $user, User $model): bool
     {
-        return $user->can('force_delete_user');
+        return $user->can('force_delete_role');
     }
 }
