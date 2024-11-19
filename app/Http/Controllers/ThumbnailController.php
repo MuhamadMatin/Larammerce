@@ -12,7 +12,10 @@ class ThumbnailController extends Controller
      */
     public function index()
     {
-        //
+        $thumbnails = Thumbnail::all();
+        return view('admin.thumbnail.index', [
+            'thumbnails' => $thumbnails,
+        ]);
     }
 
     /**

@@ -13,7 +13,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product = Product::paginate(20);
+        $products = Product::paginate(20);
+        return view('admin.product.index', [
+            'products' => $products,
+        ]);
     }
 
     /**

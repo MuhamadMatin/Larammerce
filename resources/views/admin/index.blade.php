@@ -2,7 +2,7 @@
     <main class="container py-5 mx-auto">
         <div class="grid grid-cols-1 gap-6 m-6 md:grid-cols-2 lg:grid-cols-4">
             <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-lg">
-                <x-nav-link href="{{ route('manage.product') }}" :active="request()->routeIs('manage.product')" class="text-lg font-semibold">
+                <x-nav-link href="{{ route('manage.products.index') }}" :active="request()->routeIs('manage.products.index')" class="text-lg font-semibold">
                     {{ __('Products') }}
                 </x-nav-link>
                 <span class="flex items-center mt-3">
@@ -32,7 +32,7 @@
             </div>
 
             <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-lg">
-                <x-nav-link href="{{ route('manage.shop') }}" :active="request()->routeIs('manage.shop')" class="text-lg font-semibold">
+                <x-nav-link href="{{ route('manage.shops.index') }}" :active="request()->routeIs('manage.shops.index')" class="text-lg font-semibold">
                     {{ __('Shop') }}
                 </x-nav-link>
                 <span class="flex items-center mt-3">
@@ -61,7 +61,7 @@
             </div>
 
             <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-lg">
-                <x-nav-link href="{{ route('manage.user') }}" :active="request()->routeIs('manage.user')" class="text-lg font-semibold">
+                <x-nav-link href="{{ route('manage.users.index') }}" :active="request()->routeIs('manage.users.index')" class="text-lg font-semibold">
                     {{ __('User') }}
                 </x-nav-link>
                 <span class="flex items-center mt-3">
@@ -82,7 +82,28 @@
             </div>
 
             <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-lg">
-                <x-nav-link href="{{ route('manage.thumbnail') }}" :active="request()->routeIs('manage.thumbnail')" class="text-lg font-semibold">
+                <x-nav-link href="{{ route('manage.category.index') }}" :active="request()->routeIs('manage.category.index')" class="text-lg font-semibold">
+                    {{ __('Category') }}
+                </x-nav-link>
+                <span class="flex items-center mt-3">
+                    <svg class="w-8 h-8 text-red-500" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path
+                                d="M4 21C4 17.4735 6.60771 14.5561 10 14.0709M19.8726 15.2038C19.8044 15.2079 19.7357 15.21 19.6667 15.21C18.6422 15.21 17.7077 14.7524 17 14C16.2923 14.7524 15.3578 15.2099 14.3333 15.2099C14.2643 15.2099 14.1956 15.2078 14.1274 15.2037C14.0442 15.5853 14 15.9855 14 16.3979C14 18.6121 15.2748 20.4725 17 21C18.7252 20.4725 20 18.6121 20 16.3979C20 15.9855 19.9558 15.5853 19.8726 15.2038ZM15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7Z"
+                                stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            </path>
+                        </g>
+                    </svg>
+                    <p class="ml-3 text-3xl font-bold">{{ $categories }}</p>
+                </span>
+            </div>
+
+            <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-lg">
+                <x-nav-link href="{{ route('manage.thumbnail.index') }}" :active="request()->routeIs('manage.thumbnail.index')"
+                    class="text-lg font-semibold">
                     {{ __('Thumbnail') }}
                 </x-nav-link>
                 <span class="flex items-center mt-3">

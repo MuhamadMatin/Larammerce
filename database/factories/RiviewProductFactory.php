@@ -19,7 +19,7 @@ class RiviewProductFactory extends Factory
     public function definition(): array
     {
         return [
-            'star' => $this->faker->numberBetween(1, 5),
+            'star' => $this->faker->numberBetween(2, 5),
             'body' => $this->faker->paragraph(4),
             'user_id' => User::pluck('id')->random(),
             'product_id' => Product::pluck('id')->random(),

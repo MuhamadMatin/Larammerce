@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\SavedProductUser;
 use App\Models\Shop;
 use App\Models\Thumbnail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class IndexController extends Controller
 {
@@ -40,6 +42,14 @@ class IndexController extends Controller
         $shop->load('products');
         return view('shop', [
             'shop' => $shop,
+        ]);
+    }
+
+    public function saved()
+    {
+        $products = Auth::user()->savedProducts()->with('shop')->get();
+        return view('saved-product', [
+            'products' => $products,
         ]);
     }
 

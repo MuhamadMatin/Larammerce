@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use App\Models\Shop;
 use App\Models\Thumbnail;
@@ -15,11 +16,13 @@ class AdminController extends Controller
         $products = Product::select('id')->count();
         $shops = Shop::select('id')->count();
         $users = User::select('id')->count();
+        $categories = Category::select('id')->count();
         $thumbnails = Thumbnail::select('id')->count();
         return view('admin.index', [
             'products' => $products,
             'shops' => $shops,
             'users' => $users,
+            'categories' => $categories,
             'thumbnails' => $thumbnails,
         ]);
     }

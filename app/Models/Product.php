@@ -44,7 +44,7 @@ class Product extends Model
 
     public function savedByUsers()
     {
-        return $this->belongsToMany(User::class, 'saved_product_user', 'product_id', 'user_id');
+        return $this->belongsToMany(User::class, 'saved_product_users', 'product_id', 'user_id');
     }
 
     public function calcStar()

@@ -1,6 +1,6 @@
 <x-admin-layout>
-    @forelse ($products as $product)
-        {{ $product }}
+    @forelse ($thumbnails as $thumbnail)
+        {{ $thumbnail }}
     @empty
         <p>empty</p>
     @endforelse

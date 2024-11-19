@@ -1,5 +1,5 @@
 <div class="mt-4">
-    @if ($search)
+    @if ($search || $category)
         <div class="flex items-center mt-3 gap-x-2">
             <button class="text-2xl font-bold" wire:click='resetAll()'>
                 <svg class="w-4 h-4" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
@@ -19,15 +19,20 @@
                         Searcing: {{ $search }}
                     @endif
                 </span>
+                <span>
+                    @if ($category)
+                        Searcing: {{ $category }}
+                    @endif
+                </span>
             </div>
         </div>
     @endif
-    <div class="flex flex-wrap w-full gap-5 mt-4">
+    <div class="grid flex-wrap w-full grid-cols-2 gap-5 mt-4 md:flex">
         @include('components.product.product-page', ['products' => $this->products])
     </div>
     @if ($pagination)
         <div class="my-3">
-            {{ $this->products->onEachSide(1)->links(data: ['scrollTo' => false]) }}
+            {{ $this->products->onEachSide(1)->links('vendor.livewire.tailwind', data: ['scrollTo' => false]) }}
         </div>
     @endif
 </div>

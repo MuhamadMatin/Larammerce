@@ -16,12 +16,13 @@ class ProductList extends Component
     #[Url()]
     public $search = '';
     public $category = '';
-    public $shop_id = null;
+    public $product = '';
+    public $shop = null;
     public $pagination = true;
 
     public function mount($shopId = null, $pagination = true)
     {
-        $this->shop_id = $shopId;
+        $this->shop = $shopId;
         $this->pagination = $pagination;
         // $this->resetPage();
     }
@@ -37,15 +38,16 @@ class ProductList extends Component
     public function updateCategory($category)
     {
         $this->category = $category;
-        // $this->resetPage();
+        $this->resetPage();
     }
 
     public function resetAll()
     {
-        $this->reset('search');
-        $this->reset('category');
-        $this->resetPage();
         $this->dispatch('resetAll');
+        $this->resetPage();
+        $this->reset(['search', 'category']);
+        $this->resetPage('product_page');
+        $this->resetPage('shop_page');
     }
 
     #[Computed()]
@@ -53,14 +55,14 @@ class ProductList extends Component
     {
         $query = Product::with('riview', 'shop')
             ->where('name', 'like', '%' . $this->search . '%')
-            ->when($this->shop_id, function ($query) {
-                return $query->where('shop_id', $this->shop_id);
+            ->when($this->shop, function ($query) {
+                return $query->where('shop_id', $this->shop);
             })
             ->when($this->category, function ($query) {
                 return $query->where('category_id', $this->category);
             });
 
-        return $this->pagination ? $query->paginate(20) : $query->limit(20)->get();
+        return $this->pagination ? $query->paginate(20, pageName: 'product_page') : $query->limit(20)->get();
     }
 
     public function render()

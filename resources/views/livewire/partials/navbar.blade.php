@@ -86,6 +86,9 @@ new class extends Component {
                                 <x-dropdown-link :href="route('profile')" :active="request()->routeIs('profile')">
                                     {{ __('Profile') }}
                                 </x-dropdown-link>
+                                <x-dropdown-link :href="route('saved')" :active="request()->routeIs('saved')">
+                                    {{ __('Saved products') }}
+                                </x-dropdown-link>
                                 <x-dropdown-link :href="route('manage.index')" :active="request()->routeIs('manage.index')">
                                     {{ __('Manage') }}
                                 </x-dropdown-link>

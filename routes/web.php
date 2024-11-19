@@ -1,8 +1,16 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ShopController;
+use App\Http\Controllers\ThumbnailController;
+use App\Http\Controllers\UserController;
+use App\Models\Category;
+use App\Models\Product;
+use App\Models\Shop;
 
 // Route::view('/', 'welcome');
 require __DIR__ . '/auth.php';
@@ -15,22 +23,21 @@ Route::view('/blog', 'blog')
     ->name('blog');
 
 Route::middleware(['auth'])->group(function () {
-    Route::prefix('manage')->group(function () {
+    Route::prefix('manage')->name('manage.')->group(function () {
         Route::get('/', [AdminController::class, 'index'])
-            ->name('manage.index');
-        Route::get('/products', [AdminController::class, 'products'])
-            ->name('manage.product');
-        Route::get('/shops', [AdminController::class, 'shops'])
-            ->name('manage.shop');
-        Route::get('/thumbnail', [AdminController::class, 'thumbnail'])
-            ->name('manage.thumbnail');
-        Route::get('/users', [AdminController::class, 'users'])
-            ->name('manage.user');
+            ->name('index');
+        Route::resource('/category', CategoryController::class);
+        Route::resource('/products', ProductController::class);
+        Route::resource('/shops', ShopController::class);
+        Route::resource('/thumbnail', ThumbnailController::class);
+        Route::resource('/users', UserController::class);
     });
     Route::view('/profile', 'profile')
         ->name('profile');
     Route::get('/cart', [IndexController::class, 'cart'])
         ->name('cart');
+    Route::get('/saved', [IndexController::class, 'saved'])
+        ->name('saved');
 });
 
 Route::view('dashboard', 'dashboard')
