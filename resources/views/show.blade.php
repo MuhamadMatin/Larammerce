@@ -26,7 +26,11 @@
 
             <!-- Product Info Section -->
             <div class="w-full md:w-1/2">
-                <h1 class="text-3xl font-semibold text-gray-800">{{ $product->name }}</h1>
+                <span class="flex">
+                    <h1 class="text-3xl font-semibold text-gray-800">{{ $product->name }}</h1>
+                    <livewire:saved-button :product="$product" :key="$product->id" />
+                    <livewire:to-cart :product="$product" :key="$product->id" />
+                </span>
                 <div>
                     <span class="flex items-center mt-2 gap-x-2">
                         <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

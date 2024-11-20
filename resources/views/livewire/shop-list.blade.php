@@ -1,5 +1,5 @@
 <div>
-    <div class="grid flex-wrap w-full grid-cols-2 gap-5 mt-4 md:flex">
+    <div class="flex flex-wrap gap-5 mt-4">
         @include('components.shop.shop-page', ['shops' => $this->shops])
     </div>
     @if ($pagination)

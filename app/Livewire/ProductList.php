@@ -17,14 +17,15 @@ class ProductList extends Component
     public $search = '';
     public $category = '';
     public $product = '';
+    public $user = null;
     public $shop = null;
     public $pagination = true;
 
-    public function mount($shopId = null, $pagination = true)
+    public function mount($userId = null, $shopId = null, $pagination = true)
     {
         $this->shop = $shopId;
+        $this->user = $userId;
         $this->pagination = $pagination;
-        // $this->resetPage();
     }
 
     #[On('search')]

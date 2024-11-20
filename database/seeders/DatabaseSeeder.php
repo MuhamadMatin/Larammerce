@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Cart;
 use App\Models\Shop;
 use App\Models\User;
 use App\Models\Manage;
@@ -34,5 +35,6 @@ class DatabaseSeeder extends Seeder
         ImageProduct::factory(10000)->create();
         RiviewProduct::factory(10000)->create();
         SavedProductUser::factory(5000)->create();
+        Cart::factory(1000)->create();
     }
 }

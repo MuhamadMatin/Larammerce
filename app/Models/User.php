@@ -7,6 +7,7 @@ use App\Models\Product;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -49,8 +50,23 @@ class User extends Authenticatable
         ];
     }
 
-    public function savedProducts()
+    public function savedProducts(): BelongsToMany
     {
-        return $this->belongsToMany(Product::class, 'saved_product_users', 'user_id', 'product_id');
+        return $this->belongsToMany(Product::class, 'saved_product_users');
+    }
+
+    public function toCart(): BelongsToMany
+    {
+        return $this->belongsToMany(Product::class, 'carts');
+    }
+
+    public function hasCart(Product $product)
+    {
+        return $this->toCart()->where('product_id', $product->id)->exists();
+    }
+
+    public function hasSaved(Product $product)
+    {
+        return $this->savedProducts()->where('product_id', $product->id)->exists();
     }
 }

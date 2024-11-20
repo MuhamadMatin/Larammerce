@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Product extends Model
@@ -42,9 +43,14 @@ class Product extends Model
         return $this->HasMany(RiviewProduct::class);
     }
 
-    public function savedByUsers()
+    public function savedByUsers(): BelongsToMany
     {
-        return $this->belongsToMany(User::class, 'saved_product_users', 'product_id', 'user_id');
+        return $this->belongsToMany(User::class, 'saved_product_users');
+    }
+
+    public function toCart(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'carts');
     }
 
     public function calcStar()
