@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ThumbnailController;
 use App\Http\Controllers\UserController;
@@ -12,7 +13,6 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\Shop;
 
-// Route::view('/', 'welcome');
 require __DIR__ . '/auth.php';
 
 Route::get('/', [IndexController::class, 'index'])
@@ -31,6 +31,7 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('/shops', ShopController::class);
         Route::resource('/thumbnail', ThumbnailController::class);
         Route::resource('/users', UserController::class);
+        Route::resource('/roles', RoleController::class);
     });
     Route::view('/profile', 'profile')
         ->name('profile');

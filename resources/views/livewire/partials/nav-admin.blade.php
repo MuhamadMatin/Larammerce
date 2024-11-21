@@ -67,6 +67,9 @@
                 <x-nav-admin-link :href="route('manage.users.index')" :active="request()->routeIs('manage.users.index')">
                     {{ __('User') }}
                 </x-nav-admin-link>
+                <x-nav-admin-link :href="route('manage.roles.index')" :active="request()->routeIs('manage.roles.index')">
+                    {{ __('Role') }}
+                </x-nav-admin-link>
                 <x-nav-admin-link :href="route('manage.thumbnail.index')" :active="request()->routeIs('manage.thumbnail.index')">
                     {{ __('Setting') }}
                 </x-nav-admin-link>

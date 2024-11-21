@@ -12,6 +12,12 @@ class toCart extends Component
     #[Reactive]
     public Product $product;
 
+    public function deleteItemCart($user)
+    {
+        // Remove product from the cart
+        $user->toCart()->detach($this->product);
+    }
+
     public function toggleCart()
     {
         if (auth()->guest()) {
@@ -19,12 +25,12 @@ class toCart extends Component
         }
 
         $user = auth()->user();
-
         if ($user->hasCart($this->product)) {
-            $user->toCart()->detach($this->product);
-            return;
+            $this->deleteItemCart($user);
+        } else {
+            // Add product to the cart
+            $user->toCart()->attach($this->product, ['qty' => +1]);
         }
-        $user->savedProducts()->attach($this->product);
     }
 
     public function render()

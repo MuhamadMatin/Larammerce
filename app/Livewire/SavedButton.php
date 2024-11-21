@@ -16,18 +16,19 @@ class SavedButton extends Component
     {
         if (auth()->guest()) {
             $this->redirect(route('login', absolute: false), navigate: true);
+        } else {
+            $user = auth()->user();
+
+            if ($user->hasSaved($this->product)) {
+                $user->savedProducts()->detach($this->product);
+                $this->isSaved = false;
+            } else {
+                $user->savedProducts()->attach($this->product);
+                $this->isSaved = true;
+            }
+            $this->dispatch('savedProductUpdated');
         }
-
-        $user = auth()->user();
-
-        if ($user->hasSaved($this->product)) {
-            $user->savedProducts()->detach($this->product);
-            return;
-        }
-
-        $user->savedProducts()->attach($this->product);
     }
-
 
     public function render()
     {

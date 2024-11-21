@@ -7,7 +7,6 @@
 
     <div class="mx-8">
         <div class="grid flex-wrap w-full grid-cols-2 gap-5 mt-4 md:flex">
-            @include('components.product.product-page', ['products' => $products])
+            <livewire:saved-list :produtcs="$products" />
         </div>
-    </div>
 </x-app-layout>

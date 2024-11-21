@@ -1,3 +1,7 @@
 <x-admin-layout>
-    index roles
+    @forelse ($roles as $role)
+        {{ $role }}
+    @empty
+        <p>empty</p>
+    @endforelse
 </x-admin-layout>

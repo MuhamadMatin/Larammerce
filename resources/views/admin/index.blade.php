@@ -62,15 +62,24 @@
                     {{ __('Category') }}
                 </x-nav-link>
                 <span class="flex items-center mt-3">
-                    <svg class="w-8 h-8 text-red-500" viewBox="0 0 24 24" fill="none"
+                    <svg class="w-8 h-8 stroke-black" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                         <g id="SVGRepo_iconCarrier">
+                            <path d="M5 10H7C9 10 10 9 10 7V5C10 3 9 2 7 2H5C3 2 2 3 2 5V7C2 9 3 10 5 10Z"
+                                stroke="" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            <path d="M17 10H19C21 10 22 9 22 7V5C22 3 21 2 19 2H17C15 2 14 3 14 5V7C14 9 15 10 17 10Z"
+                                stroke="" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
                             <path
-                                d="M4 21C4 17.4735 6.60771 14.5561 10 14.0709M19.8726 15.2038C19.8044 15.2079 19.7357 15.21 19.6667 15.21C18.6422 15.21 17.7077 14.7524 17 14C16.2923 14.7524 15.3578 15.2099 14.3333 15.2099C14.2643 15.2099 14.1956 15.2078 14.1274 15.2037C14.0442 15.5853 14 15.9855 14 16.3979C14 18.6121 15.2748 20.4725 17 21C18.7252 20.4725 20 18.6121 20 16.3979C20 15.9855 19.9558 15.5853 19.8726 15.2038ZM15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7Z"
-                                stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            </path>
+                                d="M17 22H19C21 22 22 21 22 19V17C22 15 21 14 19 14H17C15 14 14 15 14 17V19C14 21 15 22 17 22Z"
+                                stroke="" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            <path d="M5 22H7C9 22 10 21 10 19V17C10 15 9 14 7 14H5C3 14 2 15 2 17V19C2 21 3 22 5 22Z"
+                                stroke="" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
                         </g>
                     </svg>
                     <p class="ml-3 text-3xl font-bold">{{ $categories }}</p>
@@ -105,15 +114,23 @@
                     {{ __('Thumbnail') }}
                 </x-nav-link>
                 <span class="flex items-center mt-3">
-                    <svg class="w-8 h-8 text-red-500" viewBox="0 0 24 24" fill="none"
+                    <svg class="w-10 h-10 stroke-black" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                         <g id="SVGRepo_iconCarrier">
                             <path
-                                d="M4 21C4 17.4735 6.60771 14.5561 10 14.0709M19.8726 15.2038C19.8044 15.2079 19.7357 15.21 19.6667 15.21C18.6422 15.21 17.7077 14.7524 17 14C16.2923 14.7524 15.3578 15.2099 14.3333 15.2099C14.2643 15.2099 14.1956 15.2078 14.1274 15.2037C14.0442 15.5853 14 15.9855 14 16.3979C14 18.6121 15.2748 20.4725 17 21C18.7252 20.4725 20 18.6121 20 16.3979C20 15.9855 19.9558 15.5853 19.8726 15.2038ZM15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7Z"
-                                stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                d="M3 8.2C3 7.07989 3 6.51984 3.21799 6.09202C3.40973 5.71569 3.71569 5.40973 4.09202 5.21799C4.51984 5 5.0799 5 6.2 5H17.8C18.9201 5 19.4802 5 19.908 5.21799C20.2843 5.40973 20.5903 5.71569 20.782 6.09202C21 6.51984 21 7.0799 21 8.2V10.8C21 11.9201 21 12.4802 20.782 12.908C20.5903 13.2843 20.2843 13.5903 19.908 13.782C19.4802 14 18.9201 14 17.8 14H6.2C5.07989 14 4.51984 14 4.09202 13.782C3.71569 13.5903 3.40973 13.2843 3.21799 12.908C3 12.4802 3 11.9201 3 10.8V8.2Z"
+                                stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             </path>
+                            <path d="M9 18H10V19H9V18Z" stroke="" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            <path d="M14 18H15V19H14V18Z" stroke="" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            <path d="M19 18H20V19H19V18Z" stroke="" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            <path d="M4 18H5V19H4V18Z" stroke="" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
                         </g>
                     </svg>
                     <p class="ml-3 text-3xl font-bold">{{ $thumbnails }}</p>
@@ -121,13 +138,11 @@
             </div>
 
             <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-lg">
-                <x-nav-link href="{{ route('manage.thumbnail.index') }}" :active="request()->routeIs('manage.thumbnail.index')"
-                    class="text-lg font-semibold">
-                    {{ __('Thumbnail') }}
+                <x-nav-link href="{{ route('manage.roles.index') }}" :active="request()->routeIs('manage.roles.index')" class="text-lg font-semibold">
+                    {{ __('Roles') }}
                 </x-nav-link>
                 <span class="flex items-center mt-3">
-                    <svg class="w-8 h-8 text-red-500" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
+                    <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                         <g id="SVGRepo_iconCarrier">
@@ -137,7 +152,7 @@
                             </path>
                         </g>
                     </svg>
-                    <p class="ml-3 text-3xl font-bold">{{ $thumbnails }}</p>
+                    <p class="ml-3 text-3xl font-bold">{{ $roles }}</p>
                 </span>
             </div>
         </div>

@@ -44,7 +44,7 @@ new class extends Component {
             @auth
                 <div class="flex items-center ms-6">
                     <a wire:navigate href="{{ route('cart') }}">
-                        <svg class="w-10 h-10 fill-current text-blueDarker" viewBox="0 0 24 24" fill=""
+                        <svg class="w-8 h-8 fill-current text-blueDarker" viewBox="0 0 24 24" fill=""
                             xmlns="http://www.w3.org/2000/svg">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>

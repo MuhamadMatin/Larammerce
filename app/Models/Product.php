@@ -19,6 +19,7 @@ class Product extends Model
         'desk',
         'thumnail',
         'price',
+        'stock',
         'category_id',
         'shop_id',
     ];

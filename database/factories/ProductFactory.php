@@ -28,6 +28,7 @@ class ProductFactory extends Factory
             'desk' => $this->faker->paragraph(40),
             'thumnail' => $this->faker->imageUrl(),
             'price' => $this->faker->numberBetween(1000, 1000000),
+            'stock' => $this->faker->numberBetween(100, 1000),
             'category_id' => Category::pluck('id')->random(),
             'shop_id' => Shop::pluck('id')->random(),
         ];

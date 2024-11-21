@@ -20,6 +20,7 @@ return new class extends Migration
             $table->longText('desk');
             $table->string('thumnail');
             $table->double('price');
+            $table->integer('stock')->nullable();
             $table->foreignIdFor(Category::class)
                 ->constrained()
                 ->cascadeOnDelete();

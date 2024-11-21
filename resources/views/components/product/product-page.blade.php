@@ -1,12 +1,7 @@
 @forelse ($products as $product)
     <div class="flex-none w-full mx-auto md:w-64">
         <div class="relative">
-            <a wire:navigate
-                href="{{ route('show', [
-                    'shop' => $product->shop->slug,
-                    'product' => $product->slug,
-                ]) }}"
-                class="font-semibold text-gray-800">
+            <a wire:navigate href="" class="font-semibold text-gray-800">
                 <img src="{{ $product->thumnail }}" alt="{{ $product->name }}"
                     class="object-cover w-full h-48 rounded-t-md" loading="lazy">
             </a>
