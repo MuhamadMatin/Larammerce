@@ -21,12 +21,9 @@ class SavedButton extends Component
 
             if ($user->hasSaved($this->product)) {
                 $user->savedProducts()->detach($this->product);
-                $this->isSaved = false;
             } else {
                 $user->savedProducts()->attach($this->product);
-                $this->isSaved = true;
             }
-            $this->dispatch('savedProductUpdated');
         }
     }
 

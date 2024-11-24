@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
         Shop::factory(50)->create();
         Product::factory(5000)->create();
         ImageProduct::factory(10000)->create();
-        RiviewProduct::factory(10000)->create();
+        RiviewProduct::factory(15000)->create();
         SavedProductUser::factory(5000)->create();
         Cart::factory(1000)->create();
     }

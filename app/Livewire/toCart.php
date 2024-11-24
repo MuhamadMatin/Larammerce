@@ -12,9 +12,9 @@ class toCart extends Component
     #[Reactive]
     public Product $product;
 
+    // Remove product from cart
     public function deleteItemCart($user)
     {
-        // Remove product from the cart
         $user->toCart()->detach($this->product);
     }
 
@@ -22,14 +22,14 @@ class toCart extends Component
     {
         if (auth()->guest()) {
             $this->redirect(route('login', absolute: false), navigate: true);
-        }
-
-        $user = auth()->user();
-        if ($user->hasCart($this->product)) {
-            $this->deleteItemCart($user);
         } else {
-            // Add product to the cart
-            $user->toCart()->attach($this->product, ['qty' => +1]);
+            $user = auth()->user();
+            if ($user->hasCart($this->product)) {
+                $this->deleteItemCart($user);
+            } else {
+                // Add product to the cart
+                $user->toCart()->attach($this->product, ['qty' => +1]);
+            }
         }
     }
 

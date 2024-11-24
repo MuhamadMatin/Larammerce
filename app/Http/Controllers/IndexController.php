@@ -65,8 +65,7 @@ class IndexController extends Controller
 
     public function cart()
     {
-        $user = auth()->user();
-        $products = $user->toCart()->with('shop')->get();
+        $products = auth()->user()->toCart()->with('shop')->get();
         return view('cart', [
             'products' => $products,
         ]);

@@ -3,28 +3,19 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use Livewire\Attributes\On;
 use Illuminate\Support\Facades\Auth;
+use Livewire\Attributes\Computed;
 
 class SavedList extends Component
 {
-    public $products = [];
-
-    #[On('savedProductUpdated')]
-    public function mount()
+    #[Computed()]
+    public function products()
     {
-        $this->loadProducts();
-    }
-
-    public function loadProducts()
-    {
-        $this->products = Auth::user()->savedProducts;
+        return Auth::user()->savedProducts;
     }
 
     public function render()
     {
-        return view('livewire.saved-list', [
-            'products' => $this->products,
-        ]);
+        return view('livewire.saved-list');
     }
 }
